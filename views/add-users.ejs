@@ -1,0 +1,24 @@
+<%- include('includes/head.ejs') %>
+    </head>
+
+    <body>
+
+        <%- include('includes/navigation.ejs') %>
+            <main>
+                <h1 class="myHeading">Enter User Name</h1>
+                <form action="/admin/add-users" method="POST">
+                    <input type="text" name="userName" placeholder="User name">
+                    <input type="text" name="userEmail" placeholder="User Email">
+                    <input type="text" name="userNumber" placeholder="User Phone No.">
+                    <textarea rows="4" cols="50" name="userAddress" placeholder="User Address ...."></textarea>
+                    <button type="submit" class="button-82-pushable" role="button">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                            Add User
+                        </span>
+                    </button>
+                </form>
+            </main>
+
+            <%- include('includes/end.ejs') %>

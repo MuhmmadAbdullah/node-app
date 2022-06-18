@@ -1,0 +1,52 @@
+<%- include('includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('includes/navigation.ejs') %>
+
+            <main>
+                <h1 class="myHeading">My Products</h1>
+
+                <div class="grid">
+                    <% if(hasProducts===true){ %>
+                        <% products.map((item)=> { %>
+                            <% const { _id, productName,productPrice,productInfo }=item %>
+                                <article class="card" id=<%=_id %>>
+                                    <div class="card__image">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAbSH-ogWeMD4JF5urZIocaU91CxCqVVHaucZE4QbYTlevOcuc6z-Bzf2SoLStZ_zfvw&usqp=CAU"
+                                            alt="">
+                                    </div>
+                                    <div class="div">
+                                        <h1 class="product__title">
+                                            <%= productName %>
+                                        </h1>
+                                    </div>
+                                    <div class="card__content">
+                                        <h2 class="product__price">$<%= productPrice %>
+                                        </h2>
+                                        <p class="product__description">
+                                            <%= productInfo %>
+                                        </p>
+                                    </div>
+                                    <div class="card__actions">
+                                        <button type="submit" class="button-82-pushable" role="button">
+                                            <span class="button-82-shadow"></span>
+                                            <span class="button-82-edge"></span>
+                                            <span class="button-82-front text">
+                                                Add to Cart
+                                            </span>
+                                        </button>
+                                    </div>
+                                </article>
+                                <% }) %>
+
+                                    <% } else{%>
+                                        <h1 class="not__available">No Products Available...</h1>
+                                        <% }%>
+                </div>
+
+
+            </main>
+
+
+            <%- include('includes/end.ejs') %>
